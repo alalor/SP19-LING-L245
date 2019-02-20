@@ -1,0 +1,4 @@
+sed 's/[^а-яА-ЯIӀ]\+/\n/g' | grep -v '^$' > $$words
+tail -n +2 $$words > $$nextwords
+paste $$words $$nextwords |
+sort | uniq -c
